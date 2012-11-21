@@ -16,6 +16,7 @@
  */
 
 #include "ScriptLoader.h"
+#include "AnticheatMgr.h"
 
 //examples
 void AddSC_example_creature();
@@ -44,8 +45,10 @@ void AddSC_holiday_spell_scripts();
 void AddSC_SmartSCripts();
 
 //Commands
+void AddSC_anticheat_commandscript();
 void AddSC_account_commandscript();
 void AddSC_achievement_commandscript();
+void AddSC_ah_bot_commandscript();
 void AddSC_ban_commandscript();
 void AddSC_bf_commandscript();
 void AddSC_cast_commandscript();
@@ -109,6 +112,7 @@ void AddSC_boss_high_interrogator_gerstahn();
 void AddSC_boss_magmus();
 void AddSC_boss_moira_bronzebeard();
 void AddSC_boss_tomb_of_seven();
+void AddSC_boss_coren_direbrew();
 void AddSC_instance_blackrock_depths();
 void AddSC_boss_drakkisath();                //Blackrock Spire
 void AddSC_boss_halycon();
@@ -485,6 +489,7 @@ void AddSC_instance_halls_of_reflection();   // Halls of Reflection
 void AddSC_halls_of_reflection();
 void AddSC_boss_falric();
 void AddSC_boss_marwyn();
+void AddSC_boss_lich_king_hr();
 void AddSC_boss_lord_marrowgar();       // Icecrown Citadel
 void AddSC_boss_lady_deathwhisper();
 void AddSC_boss_deathbringer_saurfang();
@@ -623,6 +628,7 @@ void AddScripts()
     AddSpellScripts();
     AddSC_SmartSCripts();
     AddCommandScripts();
+    sAnticheatMgr->StartScripts();
 #ifdef SCRIPTS
     AddWorldScripts();
     AddEasternKingdomsScripts();
@@ -665,8 +671,10 @@ void AddSpellScripts()
 
 void AddCommandScripts()
 {
+    AddSC_anticheat_commandscript();
     AddSC_account_commandscript();
     AddSC_achievement_commandscript();
+    AddSC_ah_bot_commandscript();
     AddSC_ban_commandscript();
     AddSC_bf_commandscript();
     AddSC_cast_commandscript();
@@ -737,6 +745,7 @@ void AddEasternKingdomsScripts()
     AddSC_boss_magmus();
     AddSC_boss_moira_bronzebeard();
     AddSC_boss_tomb_of_seven();
+	AddSC_boss_coren_direbrew();
     AddSC_instance_blackrock_depths();
     AddSC_boss_drakkisath();                //Blackrock Spire
     AddSC_boss_halycon();
@@ -1208,6 +1217,7 @@ void AddNorthrendScripts()
     AddSC_halls_of_reflection();
     AddSC_boss_falric();
     AddSC_boss_marwyn();
+	AddSC_boss_lich_king_hr();
     AddSC_boss_lord_marrowgar();        // Icecrown Citadel
     AddSC_boss_lady_deathwhisper();
     AddSC_boss_deathbringer_saurfang();
@@ -1264,6 +1274,21 @@ void AddBattlegroundScripts()
 
 #ifdef SCRIPTS
 /* This is where custom scripts' loading functions should be declared. */
+void AddSC_DuelReset();
+void AddSC_ArgentTournament();
+void AddSC_npc_teleport();
+//Player Bots
+void AddSC_druid_bot();
+void AddSC_hunter_bot();
+void AddSC_mage_bot();
+void AddSC_paladin_bot();
+void AddSC_priest_bot();
+void AddSC_rogue_bot();
+void AddSC_shaman_bot();
+void AddSC_warlock_bot();
+void AddSC_warrior_bot();
+void AddSC_script_bot_giver();
+void AddSC_script_bot_commands();
 
 #endif
 
@@ -1271,6 +1296,20 @@ void AddCustomScripts()
 {
 #ifdef SCRIPTS
     /* This is where custom scripts should be added. */
-
+    AddSC_DuelReset();
+	AddSC_ArgentTournament();
+	AddSC_npc_teleport();
+    //Player Bots
+    AddSC_druid_bot();
+    AddSC_hunter_bot();
+    AddSC_mage_bot();
+    AddSC_paladin_bot();
+    AddSC_priest_bot();
+    AddSC_rogue_bot();
+    AddSC_shaman_bot();
+    AddSC_warlock_bot();
+    AddSC_warrior_bot();
+    AddSC_script_bot_giver();
+    AddSC_script_bot_commands();
 #endif
 }

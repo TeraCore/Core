@@ -16,6 +16,7 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "AnticheatMgr.h"
 #include "Common.h"
 #include "DatabaseEnv.h"
 #include "WorldPacket.h"
@@ -5137,6 +5138,8 @@ void Spell::EffectChargeDest(SpellEffIndex /*effIndex*/)
 
     if (m_targets.HasDst())
     {
+        //if (m_caster->ToPlayer())
+        //    sAnticheatMgr->DisableAnticheatDetection(m_caster->ToPlayer());
         Position pos;
         destTarget->GetPosition(&pos);
         float angle = m_caster->GetRelativeAngle(pos.GetPositionX(), pos.GetPositionY());
@@ -5207,6 +5210,9 @@ void Spell::EffectKnockBack(SpellEffIndex effIndex)
 
 void Spell::EffectLeapBack(SpellEffIndex effIndex)
 {
+    //if (m_caster->ToPlayer())
+    //    sAnticheatMgr->DisableAnticheatDetection(m_caster->ToPlayer());
+
     if (effectHandleMode != SPELL_EFFECT_HANDLE_LAUNCH_TARGET)
         return;
 
@@ -5337,6 +5343,9 @@ void Spell::EffectSummonDeadPet(SpellEffIndex /*effIndex*/)
 
     if (damage < 0)
         return;
+
+    //if (m_caster->ToPlayer())
+    //    sAnticheatMgr->DisableAnticheatDetection(m_caster->ToPlayer());
 
     float x, y, z;
     player->GetPosition(x, y, z);
