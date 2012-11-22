@@ -15,21 +15,21 @@ public:
     {
         static ChatCommand npcbotCommandTable[] =
         {
-            { "info",           SEC_ADMIN,         false, &HandleNpcBotInfoCommand,                    "", NULL },
-            { "add",            SEC_ADMIN,         false, &HandleNpcBotAddCommand,                     "", NULL },
-            { "revive",         SEC_ADMIN,         false, &HandleNpcBotReviveCommand,                  "", NULL },
-            { "remove",         SEC_ADMIN,         false, &HandleNpcBotRemoveCommand,                  "", NULL },
-            { "reset",          SEC_ADMIN,         false, &HandleNpcBotResetCommand,                   "", NULL },
-            { "command",        SEC_ADMIN,         false, &HandleNpcBotCommandCommand,                 "", NULL },
-            { "distance",       SEC_ADMIN,         false, &HandleNpcBotDistanceCommand,                "", NULL },
+            { "info",           SEC_GAMEMASTER,    false, &HandleNpcBotInfoCommand,                    "", NULL },
+            { "add",            SEC_GAMEMASTER,    false, &HandleNpcBotAddCommand,                     "", NULL },
+            { "revive",         SEC_GAMEMASTER,    false, &HandleNpcBotReviveCommand,                  "", NULL },
+            { "remove",         SEC_GAMEMASTER,    false, &HandleNpcBotRemoveCommand,                  "", NULL },
+            { "reset",          SEC_GAMEMASTER,    false, &HandleNpcBotResetCommand,                   "", NULL },
+            { "command",        SEC_GAMEMASTER,    false, &HandleNpcBotCommandCommand,                 "", NULL },
+            { "distance",       SEC_GAMEMASTER,    false, &HandleNpcBotDistanceCommand,                "", NULL },
             { NULL,             0,                 false, NULL,                                        "", NULL }
         };
         static ChatCommand commandTable[] =
         {
-            { "bot",            SEC_ADMIN,         false, &HandlePlayerbotCommand,                     "", NULL },
-            { "maintank",       SEC_ADMIN,         false, &HandleMainTankCommand,                      "", NULL },
-            { "mt",             SEC_ADMIN,         false, &HandleMainTankCommand,                      "", NULL },
-            { "npcbot",         SEC_ADMIN,         false, NULL,                          "", npcbotCommandTable },
+            { "bot",            SEC_GAMEMASTER,    false, &HandlePlayerbotCommand,                     "", NULL },
+            { "maintank",       SEC_GAMEMASTER,    false, &HandleMainTankCommand,                      "", NULL },
+            { "mt",             SEC_GAMEMASTER,    false, &HandleMainTankCommand,                      "", NULL },
+            { "npcbot",         SEC_GAMEMASTER,    false, NULL,                          "", npcbotCommandTable },
             { NULL,             0,                 false, NULL,                                        "", NULL }
         };
         return commandTable;
