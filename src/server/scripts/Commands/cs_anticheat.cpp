@@ -17,6 +17,8 @@
 #include "ObjectMgr.h"
 #include "Chat.h"
 #include "AnticheatMgr.h"
+#include "Player.h"
+#include "Language.h"
 
 class anticheat_commandscript : public CommandScript
 {
@@ -31,15 +33,15 @@ public:
             { "player",         SEC_GAMEMASTER,     true,  &HandleAntiCheatPlayerCommand,         "", NULL },
             { "delete",         SEC_ADMINISTRATOR,  true,  &HandleAntiCheatDeleteCommand,         "", NULL },
             { "handle",         SEC_ADMINISTRATOR,  true,  &HandleAntiCheatHandleCommand,         "", NULL },
-            { "jail",           SEC_GAMEMASTER,     true,  &HandleAnticheatJailCommand,         "", NULL },
-            { "warn",           SEC_GAMEMASTER,     true,  &HandleAnticheatWarnCommand,         "", NULL },
-            { NULL,             0,                     false, NULL,                                           "", NULL }
+            { "jail",           SEC_GAMEMASTER,     true,  &HandleAnticheatJailCommand,           "", NULL },
+            { "warn",           SEC_GAMEMASTER,     true,  &HandleAnticheatWarnCommand,           "", NULL },
+            { NULL,             0,                  false, NULL,                                  "", NULL }
         };
 
         static ChatCommand commandTable[] =
         {
             { "anticheat",      SEC_GAMEMASTER,     true, NULL,                     "",  anticheatCommandTable},
-            { NULL,             0,                  false, NULL,                               "", NULL }
+            { NULL,             0,                  false, NULL,                    "", NULL }
         };
 
         return commandTable;
