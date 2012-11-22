@@ -1,8 +1,4 @@
 #include "ScriptPCH.h"
-/*######
-## npc_lake_frog
-## UPDATE `creature_template` SET `ScriptName` = 'npc_lake_frog' WHERE `entry` IN (33211,33224);
-######*/
 
 #define NPC_MAIDEN 33220
 #define TRANSFORM_MAIDEN 62550
@@ -10,7 +6,7 @@
 #define LIP_BALM_SPELL 62574
 #define FROG_LOVE 62537
 #define SUMMON_ASHOOD_BRAND_SPELL 62554
-#define MAIDEN_SAY "Неужели это может быть? Свободна после всех этих многих лет?"
+#define MAIDEN_SAY "Are you ready ?"
 
 struct A_BLADE_FIT_FOR_A_CHAMPION_QUEST
 { 
